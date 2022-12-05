@@ -19,6 +19,11 @@ import java.util.List;
 
 public class StudentRecyclerList extends AppCompatActivity {
     List<Student> data;
+    public static StudentRecyclerAdapter adapter;
+
+        public static void refresh() {
+        adapter.notifyDataSetChanged();
+        }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,7 @@ public class StudentRecyclerList extends AppCompatActivity {
         list.setHasFixedSize(true);
 
         list.setLayoutManager(new LinearLayoutManager(this));
-        StudentRecyclerAdapter adapter = new StudentRecyclerAdapter();
+        adapter = new StudentRecyclerAdapter();
         list.setAdapter(adapter);
 
         adapter.setOnItemClickListener(new OnItemClickListener() {

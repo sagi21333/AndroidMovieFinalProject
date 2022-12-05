@@ -35,6 +35,8 @@ public class AddStudentActivity extends AppCompatActivity {
             //to do add student
 
             Model.addStudent(new Student(name, id, phone, address,"avatar", checked));
+            StudentRecyclerList.refresh();
+            finish();
         });
 
         cancelBtn.setOnClickListener(view -> finish());
